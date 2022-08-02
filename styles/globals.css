@@ -1,0 +1,107 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #ecf0f1;
+}
+
+h1 {
+  margin: 0;
+  /* word-wrap: break-word; */
+}
+
+a {
+  /* color: inherit; */
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.signup {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.signup-form {
+  background-color: #fff;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.signup-form > div {
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 8px;
+  display: block;
+}
+
+.signup input,
+.signup button {
+  min-width: 80vw;
+  display: block;
+  padding: 0.7rem 1rem;
+  border: 0;
+  outline: 0;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #7ed957;
+  color: #fff;
+}
+
+/* User Profile */
+.profile {
+  padding: 1rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: 1px solid red; */
+}
+
+.profile-header_image {
+  width: 75px;
+  height: 75px;
+}
+
+.profile-header_image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.profile-header_action {
+  /* flex: 1; */
+}
+
+.profile-posts {
+  padding: 1rem 0;
+}
+
+img {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.ms-2 {
+  margin-left: 0.5rem;
+}
