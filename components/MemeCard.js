@@ -14,8 +14,9 @@ const Meme = ({ meme }) => {
       {/* Card Image */}
       <div className=" ">
         {/* <img className="w-100" src={meme.imageUrl} /> */}
-
-        <Image src={meme.imageUrl} layout="fill" />
+        <div className="image-container">
+          <Image src={meme.imageUrl} layout="fill" />
+        </div>
       </div>
       {/* Card Buttons */}
       <div className="d-flex p-4">
