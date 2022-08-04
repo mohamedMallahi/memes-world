@@ -21,7 +21,7 @@ export default function SignUp() {
           <label htmlFor="Password">Password</label>
           <input type="password" id="Password" />
         </div>
-        <button>Sign Up</button>
+        <button className="btn">Sign Up</button>
       </div>
     </div>
   );

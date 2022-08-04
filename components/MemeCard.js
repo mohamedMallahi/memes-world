@@ -1,4 +1,4 @@
-import React from 'react';
+import Image from 'next/image';
 import ProfileImage from './ProfileImage';
 
 const Meme = ({ meme }) => {
@@ -13,7 +13,10 @@ const Meme = ({ meme }) => {
       </div>
       {/* Card Image */}
       <div className=" ">
-        <img className="w-100" src={meme.imageUrl} />
+        {/* <img className="w-100" src={meme.imageUrl} /> */}
+        <div style={{ width: '100%' }}>
+          <Image src={meme.imageUrl} width="100px" height="60px" />
+        </div>
       </div>
       {/* Card Buttons */}
       <div className="d-flex p-4">
