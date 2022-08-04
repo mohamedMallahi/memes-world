@@ -21,15 +21,17 @@ const Meme = ({ meme }) => {
           objectFit="contain"
         />
       </div> */}
-      <Image
-        src={meme.imageUrl}
-        alt=""
-        title=""
-        width="100%"
-        height="100%"
-        layout="responsive"
-        objectFit="contain"
-      />
+      <div style={{ position: 'relative' }}>
+        <Image
+          src={meme.imageUrl}
+          alt=""
+          title=""
+          width="100%"
+          height="100%"
+          layout="responsive"
+          objectFit="contain"
+        />
+      </div>
 
       {/* Card Buttons */}
       <div className="d-flex p-4">
