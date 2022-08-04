@@ -12,16 +12,16 @@ const Meme = ({ meme }) => {
         </p>
       </div>
       {/* Card Image */}
-      <div className=" ">
-        <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-          <Image
-            alt="Mountains"
-            src={meme.imageUrl}
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
+
+      <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+        <Image
+          alt="Mountains"
+          src={meme.imageUrl}
+          layout="fill"
+          objectFit="contain"
+        />
       </div>
+
       {/* Card Buttons */}
       <div className="d-flex p-4">
         <div>
