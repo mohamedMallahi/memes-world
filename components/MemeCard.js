@@ -3,16 +3,8 @@ import ProfileImage from './ProfileImage';
 
 const Meme = ({ meme }) => {
   return (
-    <div className="list-group-item border p-0 my-4">
-      {/* <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-        <Image
-          alt="Mountains"
-          src={meme.imageUrl}
-          layout="fill"
-          objectFit="contain"
-        />
-      </div> */}
-      <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+    <div className="meme-card">
+      <div className="meme-card_image">
         <Image
           src={meme.imageUrl}
           alt=""
@@ -24,17 +16,16 @@ const Meme = ({ meme }) => {
         />
       </div>
 
-      {/* Card Buttons */}
-      <div className="p-4">
-        <p className="d-flex align-items-center">
+      <div className="meme-card_actions dflex">
+        <p className="dflex">
           <ProfileImage />
           <b className="ms-2">John Doe</b>
         </p>
-        <div className="d-flex p-4">
+        <div className="dflex">
           <div>
             <HeartIcon />
           </div>
-          <div className="ms-2">
+          <div className="">
             <CommentIcon />
           </div>
         </div>

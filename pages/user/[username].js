@@ -46,15 +46,20 @@ export default function Home() {
   return (
     <div className="profile">
       <div className="profile-header">
-        <div className="profile-header_image">
-          <img
-            src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400"
-            alt="John Doe"
-          />
+        <div className="profile-header_left dflex">
+          <div className="profile-header_image">
+            <img
+              src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt="John Doe"
+            />
+          </div>
+          <div className="profile-header_text">
+            <h2 style={{ margin: '0' }}>John Doe</h2>
+            <span style={{ margin: '0' }}>1,688 Followers</span>
+          </div>
         </div>
         <div className="profile-header_action">
-          <h2 style={{ margin: '0' }}>John Doe</h2>
-          <button>Follow</button>
+          <button className="btn">Follow</button>
         </div>
       </div>
       <div className="profile-posts">

@@ -38,9 +38,28 @@ label {
   border-radius: 5px;
 }
 
-/* User Profile */
-.profile {
-  padding: 1rem;
+// Meme Cards
+.meme-card {
+  background-color: aqua;
+  margin-bottom: 1rem;
+
+  &_image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &_actions {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: #fff;
+  }
+
+  /* User Profile */
+  .profile {
+    padding: 1rem;
+  }
 }
 
 .profile-header {
@@ -48,6 +67,7 @@ label {
   align-items: center;
   justify-content: space-evenly;
   /* border: 1px solid red; */
+  padding: 0.5rem;
 }
 
 .profile-header_image {
@@ -61,23 +81,18 @@ label {
   border-radius: 50%;
 }
 
+.profile-header_text {
+  justify-self: left;
+}
+
 .profile-header_action {
   /* flex: 1; */
 }
 
 .profile-posts {
-  padding: 1rem 0;
+  padding: 1rem 0.5rem;
 }
 
 img {
   width: 100%;
-}
-
-.d-flex {
-  display: flex;
-  align-items: center;
-}
-
-.ms-2 {
-  margin-left: 0.5rem;
 }
