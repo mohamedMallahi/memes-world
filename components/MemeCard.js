@@ -4,15 +4,6 @@ import ProfileImage from './ProfileImage';
 const Meme = ({ meme }) => {
   return (
     <div className="list-group-item border p-0 my-4">
-      {/* Card Header */}
-      <div className="p-4">
-        <p className="d-flex align-items-center">
-          <ProfileImage />
-          <b className="ms-2">John Doe</b>
-        </p>
-      </div>
-      {/* Card Image */}
-
       {/* <div style={{ width: '100%', height: '100%', position: 'relative' }}>
         <Image
           alt="Mountains"
@@ -21,7 +12,7 @@ const Meme = ({ meme }) => {
           objectFit="contain"
         />
       </div> */}
-      <div style={{ position: 'relative' }}>
+      <div style={{ width: '100%', height: '100%', position: 'relative' }}>
         <Image
           src={meme.imageUrl}
           alt=""
@@ -34,12 +25,18 @@ const Meme = ({ meme }) => {
       </div>
 
       {/* Card Buttons */}
-      <div className="d-flex p-4">
-        <div>
-          <HeartIcon />
-        </div>
-        <div className="ms-2">
-          <CommentIcon />
+      <div className="p-4">
+        <p className="d-flex align-items-center">
+          <ProfileImage />
+          <b className="ms-2">John Doe</b>
+        </p>
+        <div className="d-flex p-4">
+          <div>
+            <HeartIcon />
+          </div>
+          <div className="ms-2">
+            <CommentIcon />
+          </div>
         </div>
       </div>
     </div>
