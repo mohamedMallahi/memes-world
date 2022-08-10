@@ -122,6 +122,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .navbar-brand {
+    display: none !important;
+  }
   .posts {
     grid-template-columns: repeat(1, 1fr);
   }
