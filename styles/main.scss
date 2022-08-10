@@ -81,6 +81,54 @@
 
 // Menu ENds
 
+// Posts Starts
+
+.posts {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  .post {
+    // border: 1px solid red;
+
+    &-actions {
+      padding: 1rem 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & > li {
+          margin-right: 1rem;
+        }
+      }
+
+      li i {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .posts {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+// Posts ENds
+
 // Signup forms
 
 .signup {
