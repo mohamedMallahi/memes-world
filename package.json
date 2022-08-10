@@ -1,6 +1,6 @@
 {
-  "name": "next-app",
-  "version": "0.1.0",
+  "name": "Memes-World",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,10 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@ionic/react": "^6.2.1",
     "firebase": "^9.9.1",
     "next": "^12.1.0",
-    "next-transpile-modules": "^9.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "sass": "^1.54.2"

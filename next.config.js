@@ -1,11 +1,5 @@
-const withTM = require('next-transpile-modules')([
-  '@ionic/react',
-  '@ionic/core',
-  '@stencil/core',
-]);
-
-module.exports = withTM({
+module.exports = {
   images: {
     domains: ['firebasestorage.googleapis.com'],
   },
-});
+};

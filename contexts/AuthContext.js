@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
-    } catch (errpr) {
+    } catch (error) {
       console.log(error);
     }
   };
