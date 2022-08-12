@@ -17,8 +17,6 @@ export default function NewPost() {
 
   const sharePost = async (e) => {
     e.preventDefault();
-    console.log(user);
-
     const storageRef = ref(storage, `images/${image.name}`);
     const snapshot = await uploadBytes(storageRef, image);
     console.log('Uploaded an image!');
@@ -26,6 +24,7 @@ export default function NewPost() {
     await addDoc(collection(db, 'posts'), {
       caption: caption,
       imageUrl: imageUrl,
+      user: user.uid
     });
   };
   return (
