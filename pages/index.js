@@ -17,12 +17,15 @@ export default function Home() {
   useEffect(async () => {
     if (user) {
       console.log('Authenticated Successfully !');
+      let newPosts;
       const q = query(collection(db, 'posts'));
       const querySnapshot = await getDocs(q);
-      const postsList = querySnapshot.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
+      const postsList = querySnapshot.forEach((doc) => {
+        newPosts.push({
+          id: doc.id,
+          ...doc.data(),
+        });
+      });
       setPosts(postsList);
     } else {
       router.push('signup');
