@@ -20,7 +20,7 @@ export default function Home() {
       const q = query(collection(db, 'posts'));
       const querySnapshot = await getDocs(q);
       const postsList = querySnapshot.forEach((doc) => {
-        newPosts.push({
+        postsList.push({
           id: doc.id,
           ...doc.data(),
         });
