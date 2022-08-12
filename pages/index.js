@@ -34,7 +34,7 @@ export default function Home() {
     } else {
       // router.push('signup');
     }
-  }, []);
+  }, [user]);
 
   return (
     <>
