@@ -11,16 +11,14 @@ const PostCard = ({ post }) => {
 
   return (
     <div onDoubleClick={like} className="post">
-      <img src={post.image} alt="" />
+      <img src={post.imageUrl} alt="" />
       <div className="post-actions">
         <div>
           <li onClick={like} className={isLiked && 'liked'}>
-            <i className="fa-solid fa-heart"></i>
-            {post.stats.likes} likes
+            <i className="fa-solid fa-heart"></i>0 likes
           </li>
           <li>
-            <i className="fa-solid fa-comment"></i>
-            {post.stats.comments.length} comments
+            <i className="fa-solid fa-comment"></i>0 comments
           </li>
         </div>
 
