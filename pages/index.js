@@ -18,7 +18,7 @@ export default function Home() {
     console.log(user, signin);
     if (user) {
       console.log('Authenticated Successfully !');
-      let newPosts;
+      let newPosts = [];
       const q = query(collection(db, 'posts'));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
