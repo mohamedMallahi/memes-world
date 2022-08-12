@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import MemeCard from '../../components/MemeCard';
+import PostCard from '../../components/PostCard';
 
 // import styles from '../styles/Home.module.css';
 
@@ -64,7 +64,7 @@ export default function Home() {
       </div>
       <div className="profile-posts">
         {memes.map((meme, index) => (
-          <MemeCard key={index} meme={meme} />
+          <PostCard key={index} post={meme} />
         ))}
       </div>
     </div>
