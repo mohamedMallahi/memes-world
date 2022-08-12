@@ -90,6 +90,7 @@
   gap: 1rem;
 
   .post {
+    position: relative;
     // border: 1px solid red;
 
     &-actions {
@@ -106,6 +107,7 @@
 
         & > li {
           margin-right: 1rem;
+          cursor: default;
         }
       }
 
@@ -113,11 +115,30 @@
         margin-right: 0.5rem;
       }
     }
+
+    .liked {
+      color: #ffd700;
+      transition: color 0.3s ease-in;
+
+      &::after {
+        content: 'Liked';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 2.6rem);
+        z-index: 100;
+        background-color: transparent;
+        display: grid;
+        place-content: center;
+      }
+    }
   }
 
   img {
     width: 100%;
     height: 350px;
+    object-fit: cover;
   }
 }
 
@@ -229,4 +250,16 @@ label {
 
 img {
   width: 100%;
+}
+
+// New Post
+textarea {
+  width: 100%;
+  height: 300px;
+  background-color: #000;
+  color: #fff;
+  outline: 0;
+  border: 0;
+  border-radius: 4px;
+  padding: 1rem;
 }

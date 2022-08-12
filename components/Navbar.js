@@ -24,8 +24,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/">
-            <i className="fa-solid fa-heart"></i>
+          <Link href="/new-post">
+            <i class="fa-solid fa-square-plus"></i>
           </Link>
         </li>
       </ul>

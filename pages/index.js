@@ -1,8 +1,10 @@
-import React from 'react';
-import Head from 'next/head';
+import React, { useEffect } from 'react';
+// import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Menu from '../components/Menu';
+import PostCard from '../components/PostCard';
 import { useAuth } from '../contexts/AuthContext';
 
 const DUMMY_DB = [
@@ -37,12 +39,13 @@ const DUMMY_DB = [
 
 export default function Home() {
   const { user } = useAuth();
+  const router = useRouter();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (user) {
       console.log('Authenticated Successfully !');
     } else {
-      console.log('Not Authenticated !');
+      // router.push('signup');
     }
   });
 
@@ -51,38 +54,16 @@ export default function Home() {
       <Navbar />
       <main>
         <Menu />
-        <div style={{ marginTop: '1rem' }}>
-          <Link href="signup">
-            <a className="btn" style={{ marginRight: '1rem' }}>
-              {' '}
-              Sign Up
-            </a>
-          </Link>
-          <Link href="signin">
-            <a className="btn"> Sign In</a>
-          </Link>
-        </div>
+
         <div className="posts">
           {DUMMY_DB.map((post) => (
-            <div className="post">
-              <img src={post.image} alt="" />
-              <div className="post-actions">
-                <div>
-                  <li>
-                    <i className="fa-solid fa-heart"></i>
-                    {post.stats.likes} likes
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-comment"></i>
-                    {post.stats.comments.length} comments
-                  </li>
-                </div>
-
-                <li className="right">
-                  <i className="fa-solid fa-share"></i>
-                </li>
-              </div>
-            </div>
+            <PostCard post={post} />
+          ))}
+          {DUMMY_DB.map((post) => (
+            <PostCard post={post} />
+          ))}
+          {DUMMY_DB.map((post) => (
+            <PostCard post={post} />
           ))}
         </div>
       </main>

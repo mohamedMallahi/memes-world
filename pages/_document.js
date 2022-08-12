@@ -12,7 +12,11 @@ export default function Document() {
           referrerpolicy="no-referrer"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;400;700&display=swap"
           rel="stylesheet"
