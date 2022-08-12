@@ -14,10 +14,8 @@ export default function Home() {
   const { user, signin } = useAuth();
   const router = useRouter();
 
-  useEffect(async () => {
-    console.log(user, signin);
-    if (user) {
-      console.log('Authenticated Successfully !');
+  useEffect(() => {
+    const getPosts = async () => {
       let newPosts;
       const q = query(collection(db, 'posts'));
       const querySnapshot = await getDocs(q);
@@ -28,6 +26,11 @@ export default function Home() {
         });
       });
       setPosts(postsList);
+    };
+    console.log(user, signin);
+    if (user) {
+      console.log('Authenticated Successfully !');
+      getPosts();
     } else {
       // router.push('signup');
     }
