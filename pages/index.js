@@ -19,13 +19,13 @@ export default function Home() {
       let newPosts;
       const q = query(collection(db, 'posts'));
       const querySnapshot = await getDocs(q);
-      const postsList = querySnapshot.forEach((doc) => {
-        postsList.push({
+      querySnapshot.forEach((doc) => {
+        newPosts.push({
           id: doc.id,
           ...doc.data(),
         });
       });
-      setPosts(postsList);
+      setPosts(newPosts);
     };
     console.log(user, signin);
     if (user) {
