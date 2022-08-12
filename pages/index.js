@@ -11,12 +11,11 @@ import { db } from '../config/firebase';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
-  const { user } = useAuth();
+  const { user, signin } = useAuth();
   const router = useRouter();
 
   useEffect(async () => {
-    const { user } = useAuth();
-    console.log(user);
+    console.log(user, signin);
     if (user) {
       console.log('Authenticated Successfully !');
       let newPosts;
