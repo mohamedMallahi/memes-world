@@ -14,7 +14,7 @@ export default function Home() {
   const { user, signin } = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
+  useEffect(async () => {
     console.log(user, signin);
     if (user) {
       console.log('Authenticated Successfully !');
