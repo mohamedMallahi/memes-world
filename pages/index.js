@@ -29,7 +29,7 @@ export default function Home() {
       });
       setPosts(postsList);
     } else {
-      router.push('signup');
+      // router.push('signup');
     }
   }, []);
 
