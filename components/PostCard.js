@@ -9,6 +9,22 @@ const PostCard = ({ post }) => {
     setIsLiked((prev) => !prev);
   };
 
+  const share = () => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: post.captio,
+          url: 'https://memes-world-next.vercel.app/',
+        })
+        .then(() => {
+          console.log('Thanks for sharing!');
+        })
+        .catch(console.error);
+    } else {
+      // fallback
+    }
+  };
+
   return (
     <div onDoubleClick={like} className="post">
       <img src={post.imageUrl} alt="" />
@@ -22,7 +38,7 @@ const PostCard = ({ post }) => {
           </li>
         </div>
 
-        <li className="right">
+        <li onClick={share} className="right">
           <i className="fa-solid fa-share"></i>
         </li>
       </div>
