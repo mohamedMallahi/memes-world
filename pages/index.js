@@ -15,6 +15,7 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(async () => {
+    console.log(user);
     if (user) {
       console.log('Authenticated Successfully !');
       let newPosts;
