@@ -6,6 +6,8 @@ import Navbar from '../components/Navbar';
 import Menu from '../components/Menu';
 import PostCard from '../components/PostCard';
 import { useAuth } from '../contexts/AuthContext';
+import { collection, getDocs, query } from 'firebase/firestore';
+import { db } from '../config/firebase';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
