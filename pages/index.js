@@ -31,7 +31,7 @@ export default function Home() {
     } else {
       router.push('signup');
     }
-  });
+  }, []);
 
   return (
     <>
