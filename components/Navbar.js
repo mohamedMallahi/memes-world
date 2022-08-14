@@ -34,7 +34,7 @@ const Navbar = () => {
       </ul>
       <Link href="/">
         <a className="navbar-account">
-          <img src={user.photoURL ? user.photoURL : ''} alt="Elena Doe" />
+          <img src={user ? user.photoURL : ''} alt="Elena Doe" />
         </a>
       </Link>
     </nav>
