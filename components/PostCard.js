@@ -13,10 +13,10 @@ const PostCard = ({ post }) => {
     setIsLiked((prev) => !prev);
     const docRef = doc(db, 'posts', post.id);
     try {
-      await setDoc({
+      await setDoc(docRef, {
         ...post,
         stats: {
-          comments: post.stats.comments,
+          ...post.stats,
           likes: [...post.stats.likes, user.uid],
         },
       });
