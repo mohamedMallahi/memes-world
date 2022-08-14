@@ -16,8 +16,8 @@ const PostCard = ({ post }) => {
       await setDoc({
         ...post,
         stats: {
-          comments: post.comments,
-          likes: [...post.likes, user.uid],
+          comments: post.stats.comments,
+          likes: [...post.stats.likes, user.uid],
         },
       });
     } catch (error) {
