@@ -17,7 +17,7 @@ const PostCard = ({ post }) => {
         ...post,
         stats: {
           comments: post.comments,
-          likes: [...posts.likes, user.uid],
+          likes: [...post.likes, user.uid],
         },
       });
     } catch (error) {
@@ -47,10 +47,12 @@ const PostCard = ({ post }) => {
       <div className="post-actions">
         <div>
           <li onClick={like} className={isLiked && 'liked'}>
-            <i className="fa-solid fa-heart"></i>0 likes
+            <i className="fa-solid fa-heart"></i>
+            {post.stats.likes.length} likes
           </li>
           <li>
-            <i className="fa-solid fa-comment"></i>0 comments
+            <i className="fa-solid fa-comment"></i>
+            {post.stats.comments.length} comments
           </li>
         </div>
 
