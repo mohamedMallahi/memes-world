@@ -25,6 +25,7 @@ export const AuthProvider = ({ children }) => {
           uid: user.uid,
           email: user.email,
           displayName: user.displayName,
+          photoURL: user.photoURL,
         });
       } else {
         setUser(null);

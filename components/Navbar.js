@@ -1,7 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import { useAuth } from '../contexts/AuthContext';
 
 const Navbar = () => {
+  const { user } = useAuth();
+
   return (
     <nav className="navbar">
       <Link href="/">
