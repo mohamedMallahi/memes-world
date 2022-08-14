@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import Image from 'next/image';
-import ProfileImage from './ProfileImage';
 import { useAuth } from '../contexts/AuthContext';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
+import { Heart, MessageCircle, Share } from 'react-feather';
 
 const PostCard = ({ post }) => {
   const [isLiked, setIsLiked] = useState(false);
@@ -47,17 +46,17 @@ const PostCard = ({ post }) => {
       <div className="post-actions">
         <div>
           <li onClick={like} className={isLiked && 'liked'}>
-            <i className="fa-solid fa-heart"></i>
+            <Heart />
             {post.stats.likes.length} likes
           </li>
           <li>
-            <i className="fa-solid fa-comment"></i>
+            <MessageCircle />
             {post.stats.comments.length} comments
           </li>
         </div>
 
         <li onClick={share} className="right">
-          <i className="fa-solid fa-share"></i>
+          <Share />
         </li>
       </div>
     </div>
