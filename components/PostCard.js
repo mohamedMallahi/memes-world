@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import ProfileImage from './ProfileImage';
 import { useAuth } from '../contexts/AuthContext';
-import { setDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 
 const PostCard = ({ post }) => {
