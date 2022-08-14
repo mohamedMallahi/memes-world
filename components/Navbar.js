@@ -34,10 +34,7 @@ const Navbar = () => {
       </ul>
       <Link href="/">
         <a className="navbar-account">
-          <img
-            src="https://images.pexels.com/photos/10669673/pexels-photo-10669673.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-            alt="Elena Doe"
-          />
+          <img src={user.photoURL} alt={user.displayName} />
         </a>
       </Link>
     </nav>
