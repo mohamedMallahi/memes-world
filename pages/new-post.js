@@ -24,7 +24,11 @@ export default function NewPost() {
     await addDoc(collection(db, 'posts'), {
       caption: caption,
       imageUrl: imageUrl,
-      user: user.uid
+      user: user.uid,
+      stats: {
+        likes: [],
+        comments: [],
+      },
     });
   };
   return (

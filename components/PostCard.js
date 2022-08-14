@@ -1,12 +1,28 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import ProfileImage from './ProfileImage';
+import { useAuth } from '../contexts/AuthContext';
+import { setDoc } from 'firebase/firestore';
+import { db } from '../config/firebase';
 
 const PostCard = ({ post }) => {
   const [isLiked, setIsLiked] = useState(false);
+  const { user } = useAuth();
 
-  const like = () => {
+  const like = async () => {
     setIsLiked((prev) => !prev);
+    const docRef = doc(db, 'posts', post.id);
+    try {
+      await setDoc({
+        ...post,
+        stats: {
+          comments: post.comments,
+          likes: [...posts.likes, user.uid],
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const share = () => {

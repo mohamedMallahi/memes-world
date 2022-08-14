@@ -11,7 +11,7 @@ import { db } from '../config/firebase';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
-  const { user, signin } = useAuth();
+  const { user } = useAuth();
   const router = useRouter();
 
   useEffect(async () => {
