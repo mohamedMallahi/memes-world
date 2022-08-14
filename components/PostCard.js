@@ -50,7 +50,7 @@ const PostCard = ({ post }) => {
             {post.stats.likes.length} likes
           </li>
           <li>
-            <MessageCircle />
+            <MessageCercle />
             {post.stats.comments.length} comments
           </li>
         </div>

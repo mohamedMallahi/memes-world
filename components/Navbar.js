@@ -10,12 +10,6 @@ const Navbar = () => {
   console.log(1, user);
   return (
     <nav className="navbar">
-      <li
-        onClick={() => setIsLiked((prev) => !prev)}
-        className={isLiked && 'liked'}
-      >
-        <Heart />
-      </li>
       <Link href="/">
         <a className="navbar-brand">Memes-World</a>
       </Link>

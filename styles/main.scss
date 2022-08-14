@@ -109,13 +109,13 @@
         align-items: center;
         justify-content: space-between;
 
-        & > li {
+        & > svg {
           margin-right: 1rem;
           cursor: default;
         }
       }
 
-      li i {
+      li svg {
         margin-right: 0.5rem;
       }
     }
