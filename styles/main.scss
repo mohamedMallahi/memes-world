@@ -104,6 +104,12 @@
       align-items: center;
       justify-content: space-between;
 
+      li {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+      }
+
       & > div {
         display: flex;
         align-items: center;
