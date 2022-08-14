@@ -4,7 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 
 const Navbar = () => {
   const { user } = useAuth();
-  console.log(user);
+  console.log(1, user);
   return (
     <nav className="navbar">
       <Link href="/">
