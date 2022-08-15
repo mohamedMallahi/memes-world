@@ -21,6 +21,16 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;400;700&display=swap"
           rel="stylesheet"
         />
+        <meta property="og:title" content="Memes World" />
+        <meta property="og:type" content="image/jpeg" />
+        <meta
+          property="og:url"
+          content="https://memes-world-next.vercel.app/"
+        />
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/memes-world-2aa4d.appspot.com/o/images%2FMemes%20World%20Social%20Media.png?alt=media&token=a928ca3b-67ce-489d-9d71-d49a18f70d9f"
+        />
       </Head>
       <body>
         <Main />
