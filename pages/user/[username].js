@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useAuth } from '../../contexts/AuthContext';
+import Navbar from '../components/Navbar';
 import PostCard from '../../components/PostCard';
 import { collection, query, getDocs } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -29,29 +29,34 @@ export default function Home() {
   });
 
   return (
-    <div className="profile">
-      <div className="profile-header">
-        <div className="profile-header_left dflex">
-          <div className="profile-header_image">
-            <img
-              src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400"
-              alt="John Doe"
-            />
+    <>
+      <Navbar />
+      <main>
+        <div className="profile">
+          <div className="profile-header">
+            <div className="profile-header_left dflex">
+              <div className="profile-header_image">
+                <img
+                  src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="John Doe"
+                />
+              </div>
+              <div className="profile-header_text">
+                <h2 style={{ margin: '0' }}>John Doe</h2>
+                <span style={{ margin: '0' }}>1,688 Followers</span>
+              </div>
+            </div>
+            <div className="profile-header_action">
+              <button className="btn">Follow</button>
+            </div>
           </div>
-          <div className="profile-header_text">
-            <h2 style={{ margin: '0' }}>John Doe</h2>
-            <span style={{ margin: '0' }}>1,688 Followers</span>
+          <div className="profile-posts">
+            {posts.map((post, index) => (
+              <PostCard key={index} post={post} />
+            ))}
           </div>
         </div>
-        <div className="profile-header_action">
-          <button className="btn">Follow</button>
-        </div>
-      </div>
-      <div className="profile-posts">
-        {posts.map((post, index) => (
-          <PostCard key={index} post={post} />
-        ))}
-      </div>
-    </div>
+      </main>
+    </>
   );
 }
