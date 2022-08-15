@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+// import { NextApiRequest, NextApiResponse } from 'next';
 import formidable from 'formidable';
 import { db, storage } from '../../../config/firebase';
 import { collection, getDocs, query, addDoc } from 'firebase/firestore';
