@@ -18,7 +18,7 @@ export default function Home() {
       const res = await fetch('/api/posts');
       const data = await res.json();
       setPosts(data);
-      console.log(data);
+      console.log('api', data);
     } else {
       // router.push('signup');
     }
