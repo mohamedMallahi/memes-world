@@ -19,8 +19,7 @@ export default function NewPost() {
     formData.append(caption, caption);
     const res = await fetch('/api/posts', {
       method: 'POST',
-      body: formData
-      }),
+      body: formData,
     });
     const data = await res.json();
 
