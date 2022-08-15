@@ -1,4 +1,4 @@
-import { db } from '../../config/firebase';
+import { db } from '../../../config/firebase';
 import { collection, getDocs, query } from 'firebase/firestore';
 
 export default async (req, res) => {
