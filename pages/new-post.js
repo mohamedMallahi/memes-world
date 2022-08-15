@@ -14,12 +14,12 @@ export default function NewPost() {
 
   const submitPost = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append('image', image);
+    formData.append(caption, caption);
     const res = await fetch('/api/posts', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        caption,
-        image,
+      body: formData
       }),
     });
     const data = await res.json();
