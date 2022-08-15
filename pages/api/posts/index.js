@@ -15,7 +15,7 @@ export default async (req, res) => {
     });
     res.status(200).json({ posts: newPosts });
   } else if (req.method === 'POST') {
-    console.log(req.bodt);
+    console.log(req.body);
     const { image, caption } = req.body;
     const storageRef = ref(storage, `images/${image.name}`);
     const snapshot = await uploadBytes(storageRef, image);
