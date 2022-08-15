@@ -20,7 +20,7 @@ export default function NewPost() {
     console.log(image);
     const res = await fetch('/api/posts', {
       method: 'POST',
-      body: formDat,
+      body: formData,
     });
     const data = await res.json();
 
