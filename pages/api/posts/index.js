@@ -30,6 +30,6 @@ export default async (req, res) => {
         comments: [],
       },
     });
-    res.status(200).json(;
+    res.status(200).json('success');
   }
 };
