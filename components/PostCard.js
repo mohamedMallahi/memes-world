@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { doc, setDoc } from 'firebase/firestore';
-import { db } from '../config/firebase';
 import { Heart, MessageCircle, Share } from 'react-feather';
 
 const PostCard = ({ post }) => {
@@ -10,18 +8,7 @@ const PostCard = ({ post }) => {
 
   const like = async () => {
     setIsLiked((prev) => !prev);
-    const docRef = doc(db, 'posts', post.id);
-    try {
-      await setDoc(docRef, {
-        ...post,
-        stats: {
-          ...post.stats,
-          likes: [...post.stats.likes, user.uid],
-        },
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    
   };
 
   const share = () => {

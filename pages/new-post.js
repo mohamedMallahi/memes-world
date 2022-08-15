@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { useAuth } from '../contexts/AuthContext';
-import { collection, addDoc } from 'firebase/firestore';
-import { db, storage } from '../config/firebase';
 
 export default function NewPost() {
   const [caption, setCaption] = useState('');
@@ -15,27 +12,25 @@ export default function NewPost() {
     }
   };
 
-  const sharePost = async (e) => {
+  const submitPost = async (e) => {
     e.preventDefault();
-    const storageRef = ref(storage, `images/${image.name}`);
-    const snapshot = await uploadBytes(storageRef, image);
-    console.log('Uploaded an image!');
-    const imageUrl = await getDownloadURL(storageRef);
-    await addDoc(collection(db, 'posts'), {
-      caption: caption,
-      imageUrl: imageUrl,
-      user: user.uid,
-      stats: {
-        likes: [],
-        comments: [],
-      },
+    const res = await fetch('/api/posts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        caption,
+        image,
+      }),
     });
+    const data = await res.json();
+
+    console.log(data);
   };
   return (
     <div className="container">
       <Link href="/">{'< Back'}</Link>
       <h1 className="my">New Post</h1>
-      <form onSubmit={sharePost}>
+      <form onSubmit={submitPost}>
         <div className="my">
           <input onChange={handleChange} type="file" />
         </div>
