@@ -23,6 +23,7 @@ export default function Home() {
         ...doc.data(),
       }));
       setPosts(postsList);
+      return 0;
     } else {
       router.push('/signup');
     }
