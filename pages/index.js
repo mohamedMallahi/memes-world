@@ -17,8 +17,8 @@ export default function Home() {
       console.log('Authenticated Successfully !');
       const res = await fetch('/api/posts');
       const data = await res.json();
-      setPosts(data);
-      console.log('api', data.posts);
+      setPosts(data.posts);
+      console.log('api', data);
     } else {
       // router.push('signup');
     }
