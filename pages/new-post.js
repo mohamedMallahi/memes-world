@@ -22,9 +22,9 @@ export default function NewPost() {
       method: 'POST',
       body: formData,
     });
-    // const data = await res.json();
+    const data = await res.json();
 
-    console.log(res);
+    console.log(data);
   };
   return (
     <div className="container">
