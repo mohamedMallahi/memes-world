@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useAuth } from '../../contexts/AuthContext';
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import PostCard from '../../components/PostCard';
 import { collection, query, getDocs } from 'firebase/firestore';
 import { db } from '../../config/firebase';
