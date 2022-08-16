@@ -24,16 +24,20 @@ export default function NewPost() {
   const submitPost = async (e) => {
     e.preventDefault();
     // console.log(image);
-    const res = await fetch('/api/posts/create', {
-      method: 'POST',
-      body: {
-        caption,
-        imageUrl: image,
-        filename,
-      },
-    });
-    const data = await res.json();
-    console.log(data);
+    try {
+      const res = await fetch('/api/posts/create', {
+        method: 'POST',
+        body: {
+          caption,
+          imageUrl: image,
+          filename,
+        },
+      });
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="container">
