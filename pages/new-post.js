@@ -5,13 +5,15 @@ import { useAuth } from '../contexts/AuthContext';
 export default function NewPost() {
   const [caption, setCaption] = useState('');
   const [image, setImage] = useState('');
+  const [filename, setFilename] = useState('');
   const { user } = useAuth();
 
   const handleImage = (e) => {
     let file = e.target.files[0];
+    console.log(file.name);
     let fileReader = new FileReader();
     fileReader.onload = (e) => {
-      // console.log(e.target.result);
+      setFilename(file.name);
       setImage(e.target.result);
     };
     if (file) {
@@ -22,12 +24,13 @@ export default function NewPost() {
   const submitPost = async (e) => {
     e.preventDefault();
     // console.log(image);
-    const res = await fetch('/api/posts', {
+    const res = await fetch('/api/posts/create', {
       method: 'POST',
-      body: JSON.stringify({
+      body: {
         caption,
         imageUrl: image,
-      }),
+        filename,
+      },
     });
     const data = await res.json();
     console.log(data);
