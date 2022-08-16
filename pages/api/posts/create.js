@@ -26,7 +26,7 @@ function dataURItoBlob(dataURI) {
   return blob;
 }
 
-export default async () => {
+export default async (req, res) => {
   if (req.method !== 'POST') {
     res.status(400).json({ message: 'Invalid request method!' });
   }
