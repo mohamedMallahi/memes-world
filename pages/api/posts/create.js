@@ -39,7 +39,7 @@ export default async () => {
   await addDoc(collection(db, 'posts'), {
     caption: caption,
     imageUrl: imageFirebaseUrl,
-    user: user.uid,
+    // user: user.uid,
     stats: {
       likes: [],
       comments: [],
