@@ -27,11 +27,11 @@ export default function NewPost() {
     try {
       const res = await fetch('/api/posts/create', {
         method: 'POST',
-        body: {
+        body: JSON.stringify({
           caption,
           imageUrl: image,
           filename,
-        },
+        }),
       });
       const data = await res.json();
       console.log(data);
