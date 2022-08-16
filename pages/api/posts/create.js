@@ -34,7 +34,7 @@ export default async () => {
   try {
     const { imageUrl, caption, filename } = req.body;
     const storageRef = ref(storage, `images/${filename}`);
-    const snapshot = await uploadBytes(storageRef, dataURItoBlob(imageUrl));
+    await uploadBytes(storageRef, await dataURItoBlob(imageUrl));
     console.log('Uploaded an image!');
     const imageFirebaseUrl = await getDownloadURL(storageRef);
     await addDoc(collection(db, 'posts'), {
