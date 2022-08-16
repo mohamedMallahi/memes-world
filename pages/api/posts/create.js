@@ -33,20 +33,20 @@ export default async (req, res) => {
 
   try {
     const { imageUrl, caption, filename } = req.body;
-    const storageRef = ref(storage, `images/${filename}`);
-    await uploadBytes(storageRef, await dataURItoBlob(imageUrl));
-    console.log('Uploaded an image!');
-    const imageFirebaseUrl = await getDownloadURL(storageRef);
-    await addDoc(collection(db, 'posts'), {
-      caption: caption,
-      imageUrl: imageFirebaseUrl,
-      // user: user.uid,
-      stats: {
-        likes: [],
-        comments: [],
-      },
-    });
-    res.status(200).json({ status: 'ok' });
+    // const storageRef = ref(storage, `images/${filename}`);
+    // await uploadBytes(storageRef, await dataURItoBlob(imageUrl));
+    // console.log('Uploaded an image!');
+    // const imageFirebaseUrl = await getDownloadURL(storageRef);
+    // await addDoc(collection(db, 'posts'), {
+    //   caption: caption,
+    //   imageUrl: imageFirebaseUrl,
+    //   // user: user.uid,
+    //   stats: {
+    //     likes: [],
+    //     comments: [],
+    //   },
+    // });
+    res.status(200).json({ status: 'ok', ...req.body });
   } catch (error) {
     res.status(501).json(error);
   }
