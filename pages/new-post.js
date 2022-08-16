@@ -4,26 +4,32 @@ import { useAuth } from '../contexts/AuthContext';
 
 export default function NewPost() {
   const [caption, setCaption] = useState('');
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState('');
   const { user } = useAuth();
-  const handleChange = (e) => {
-    if (e.target.files[0]) {
-      setImage(e.target.files[0]);
+
+  const handleImage = (e) => {
+    let file = e.target.files[0];
+    let fileReader = new FileReader();
+    fileReader.onload = (e) => {
+      // console.log(e.target.result);
+      setImage(e.target.result);
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
     }
   };
 
   const submitPost = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('image', image);
-    formData.append('caption', caption);
-    console.log(image);
+    // console.log(image);
     const res = await fetch('/api/posts', {
       method: 'POST',
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        caption,
+        imageUrl: image,
+      }),
     });
     const data = await res.json();
-
     console.log(data);
   };
   return (
@@ -32,7 +38,10 @@ export default function NewPost() {
       <h1 className="my">New Post</h1>
       <form onSubmit={submitPost}>
         <div className="my">
-          <input onChange={handleChange} type="file" />
+          <input onChange={handleImage} type="file" />
+        </div>
+        <div className="my">
+          {image && <img src={image} style={{ width: '100%' }} />}
         </div>
         <div className="my">
           <textarea
